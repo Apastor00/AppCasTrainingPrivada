@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.Priv_Login"
+    tools:context=".View.Priv_NuevoUsuario"
     android:background="@drawable/background">
 
     <com.google.android.material.textfield.TextInputLayout
@@ -36,56 +36,45 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         app:endIconMode="password_toggle">
-
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtxtLoginPassword"
+            android:id="@+id/edtxtLoginPassword1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/editLoginPassword1"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtInpPass2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:id="@+id/constraintBtn"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtInpPass1">
-        <Button
-            android:id="@+id/btnInicioSesion"
-            android:layout_width="0dp"
+        app:layout_constraintTop_toBottomOf="@id/txtInpPass1"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:endIconMode="password_toggle">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtxtLoginPassword2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/background_btn"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
-            app:layout_constraintStart_toStartOf="@id/constraintBtn"
-            app:layout_constraintEnd_toStartOf="@+id/guideVerticalBtn"
-            android:text="@string/btnInicioSesion"
-            tools:ignore="MissingConstraints">
-        </Button>
-        <Button
-            android:id="@+id/btnRegistroNuevo"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_btn"
-            app:layout_constraintStart_toEndOf="@+id/guideVerticalBtn"
-            app:layout_constraintEnd_toEndOf="@+id/constraintBtn"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:text="@string/btnNuevoUsuario"
-            tools:ignore="MissingConstraints">
-        </Button>
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideVerticalBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5">
-
-        </androidx.constraintlayout.widget.Guideline>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:hint="@string/editLoginPassword2"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/btnRegistroNuevo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/btnNuevoUsuario"
+        app:layout_constraintTop_toBottomOf="@id/txtInpPass2">
+    </Button>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideHorizontal"
@@ -95,3 +84,5 @@
         app:layout_constraintGuide_percent="0.500684" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+

@@ -7,6 +7,8 @@
     <string name="btnGoogle"> Inicio de sesión con Google</string>
     <string name="btnFacebook"> Inicio de sesión con Facebook</string>
     <string name="edtLoginMail"> Introduce tu mail</string>
-    <string name="editLoginPassword"> Introduce tu contraseña</string>
-    <string name="BtnInicioSesion"> Iniciar Sesión</string>
+    <string name="editLoginPassword1"> Introduce tu contraseña</string>
+    <string name="editLoginPassword2"> Introduce de nuevo tu contraseña</string>
+    <string name="btnInicioSesion"> Iniciar Sesión</string>
+    <string name="btnNuevoUsuario"> Nuevo Usario</string>
 </resources>

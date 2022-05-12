@@ -27,8 +27,23 @@ public class Priv_Login extends AppCompatActivity {
         privLoginBinding = ActivityPrivLoginBinding.inflate(getLayoutInflater());
         setContentView(privLoginBinding.getRoot());
         mAuth = FirebaseAuth.getInstance();
-    }
 
+        privLoginBinding.btnInicioSesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String mail = privLoginBinding.edtxtLoginMail.getText().toString();
+                String password = privLoginBinding.edtxtLoginPassword.getText().toString();
+                inicioSesion(mail, password);
+            }
+        });
+        privLoginBinding.btnRegistroNuevo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Priv_Login.this, Priv_NuevoUsuario.class);
+                startActivity(i);
+            }
+        });
+    }
 
     @Override
     public void onStart(){
@@ -37,11 +52,7 @@ public class Priv_Login extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
     }
-    public void startSignin(View view){
-        String mail = privLoginBinding.edtxtLoginMail.getText().toString();
-        //String mail = privLoginBinding.edtxtLoginMail.getEditText().toString();
-        String password = privLoginBinding.edtxtLoginPassword.getText().toString();
-        //String password = privLoginBinding.edtxtLoginPassword.getEditText().toString();
+    public void inicioSesion(String mail, String password){
         mAuth.signInWithEmailAndPassword(mail, password).addOnCompleteListener(this,
                 new OnCompleteListener<AuthResult>() {
                     @Override
