@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "74035097095",
+    "project_id": "app-cas-training",
+    "storage_bucket": "app-cas-training.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:74035097095:android:0b35c5a9a4a2ad8c7e04a2",
+        "android_client_info": {
+          "package_name": "com.castraining.app_castraining_privada"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "74035097095-grfstlgkcb2q3cfhsd78b2r56jnrjmpp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzylOH3p7Ehnfevkznycne71_t-49ENfg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "74035097095-grfstlgkcb2q3cfhsd78b2r56jnrjmpp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

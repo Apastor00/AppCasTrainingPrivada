@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../Artemi/AndroidStudioProjects/AppCASTrainingPrivada/app/src/main/res/drawable/background.xml" value="0.1" />
+        <entry key="../../../Artemi/AndroidStudioProjects/AppCASTrainingPrivada/app/src/main/res/drawable/background_btn.xml" value="0.1" />
+        <entry key="../../../Artemi/AndroidStudioProjects/AppCASTrainingPrivada/app/src/main/res/drawable/icon_selector.xml" value="0.1" />
+        <entry key="../../../Artemi/AndroidStudioProjects/AppCASTrainingPrivada/app/src/main/res/layout/activity_main.xml" value="0.10648148148148148" />
+        <entry key="../../../Artemi/AndroidStudioProjects/AppCASTrainingPrivada/app/src/main/res/layout/activity_pri_main.xml" value="0.1" />
+        <entry key="../../../Artemi/AndroidStudioProjects/AppCASTrainingPrivada/app/src/main/res/layout/activity_priv_inicio_apple.xml" value="0.10648148148148148" />
+        <entry key="../../../Artemi/AndroidStudioProjects/AppCASTrainingPrivada/app/src/main/res/layout/activity_priv_inicio_facebook.xml" value="0.10648148148148148" />
+        <entry key="../../../Artemi/AndroidStudioProjects/AppCASTrainingPrivada/app/src/main/res/layout/activity_priv_inicio_google.xml" value="0.10648148148148148" />
+        <entry key="../../../Artemi/AndroidStudioProjects/AppCASTrainingPrivada/app/src/main/res/layout/activity_priv_inicio_mail.xml" value="0.10648148148148148" />
+        <entry key="../../../Artemi/AndroidStudioProjects/AppCASTrainingPrivada/app/src/main/res/layout/activity_priv_login.xml" value="0.28254847645429365" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

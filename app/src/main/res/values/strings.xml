@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">App - CAS Training -Privada</string>
+    <string name="app_name">App - CAS Training - Privada</string>
+    <string name="txtInicio"> Inicio de sesión</string>
+    <string name="txtConddiciones"> Al usar nuestros servicios estas aceptando nuestras <b>Condiciones</b> y nuestra <b>Declaración de privacidad</b></string>
+    <string name="btnInicioCorreo"> Inicio de sesión con correo electrónico</string>
+    <string name="btnApple"> Inicio de sesión con Apple</string>
+    <string name="btnGoogle"> Inicio de sesión con Google</string>
+    <string name="btnFacebook"> Inicio de sesión con Facebook</string>
+    <string name="edtLoginMail"> Introduce tu mail</string>
+    <string name="editLoginPassword"> Introduce tu contraseña</string>
+    <string name="BtnInicioSesion"> Iniciar Sesión</string>
 </resources>
