@@ -11,4 +11,5 @@
     <string name="editLoginPassword2"> Introduce de nuevo tu contraseña</string>
     <string name="btnInicioSesion"> Iniciar Sesión</string>
     <string name="btnNuevoUsuario"> Nuevo Usario</string>
+    <string name="btnCerrarSesion"> Cerrar Sesión</string>
 </resources>

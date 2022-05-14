@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.Priv_InicioMail"
+    tools:context=".view.PrivInicioMail"
     android:background="@drawable/background">
 
     <TextView
@@ -13,16 +13,28 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideHorizontal"
+        app:layout_constraintTop_toTopOf="@+id/guideHorizontal20"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textAlignment="center"
-        android:textColor="@color/black"
-        >
+        android:textColor="@color/black">
     </TextView>
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCerrarSesion"
+        android:text="@string/btnCerrarSesion"
+        app:layout_constraintTop_toBottomOf="@+id/txtResultadoLogin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp">
+
+    </Button>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideHorizontal"
+        android:id="@+id/guideHorizontal20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"

@@ -1,4 +1,4 @@
-package com.castraining.app_castraining_privada.View;
+package com.castraining.app_castraining_privada.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.castraining.app_castraining_privada.databinding.ActivityPrivInicioFacebookBinding;
 
-public class Priv_InicioFacebook extends AppCompatActivity {
+public class PrivInicioFacebook extends AppCompatActivity {
 
     private ActivityPrivInicioFacebookBinding pri_IniFacBinding;
 

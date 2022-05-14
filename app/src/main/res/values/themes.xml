@@ -13,7 +13,38 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <!--SplashScreen -->
     <style name="SplashScreen" parent="android:TextAppearance.Theme">
         <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+    <!-- Diseño botón inicio sesión con usuario/constraseña-->
+    <style name="btnApp" >
+        <item name="android:background">@drawable/background_btn</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <!-- Diseño botón inicio sesión con Apple-->
+    <style name="btnAppleInicio">
+        <item name="android:background">@drawable/background_apple</item>
+        <item name="android:drawableStart">@drawable/ic_applelogo</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:text">@string/btnApple</item>
+        <item name="paddingStart">20dp</item>
+
+    </style>
+    <!-- Diseño botón inicio sesión con Google-->
+    <style name="btnGoogle">
+        <item name="android:background">@drawable/background_google</item>
+        <item name="android:drawableStart">@drawable/googleg_standard_color_18</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:text">@string/btnGoogle</item>
+    </style>
+    <!-- Diseño botón inicio sesión con Facebook-->
+    <style name="btnFacebook">
+        <item name="android:background">@drawable/background_facebook</item>
+        <item name="android:drawableStart">@drawable/ic_logofacebook</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:text">@string/btnFacebook</item>
+        <item name="paddingStart">20dp</item>
     </style>
 </resources>
