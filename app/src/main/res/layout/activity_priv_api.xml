@@ -18,25 +18,35 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnBusquedaApi"
+        android:id="@+id/btnConvocatorias"
         style="@style/btnApp"
         app:layout_constraintTop_toBottomOf="@id/edtxtBusqueda"
         android:layout_marginTop="10dp"
-        android:text="Búsqueda Api"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Búsqueda Convocatorias"
+        app:layout_constraintEnd_toStartOf="@id/btnCursos"
         app:layout_constraintStart_toStartOf="parent"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCursos"
+        style="@style/btnApp"
+        android:text="Búsqueda Cursos"
+        app:layout_constraintStart_toEndOf="@id/btnConvocatorias"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtxtBusqueda"
+        android:layout_marginTop="10dp"
         />
     <ListView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:id="@+id/lstView"
-        app:layout_constraintTop_toBottomOf="@id/btnBusquedaApi"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnCursos"
+        app:layout_constraintEnd_toEndOf="@id/btnCursos"
+        app:layout_constraintStart_toStartOf="@id/btnConvocatorias"
         app:layout_constraintBottom_toBottomOf="parent"
         android:visibility="invisible">
     </ListView>
-
     <ProgressBar
         android:id="@+id/progressBar"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
@@ -47,10 +57,10 @@
         android:max="100"
         android:progress="2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnBusquedaApi"
-        tools:visibility="visible" />
+        app:layout_constraintEnd_toEndOf="@id/lstView"
+        app:layout_constraintStart_toStartOf="@id/lstView"
+        app:layout_constraintTop_toBottomOf="@id/btnCursos"
+        android:visibility="invisible" />
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -63,6 +73,7 @@
         android:textSize="16sp"
         android:textAlignment="center"
         android:textStyle="bold"
-        android:textColor="@color/verdeCasTraining"/>
+        android:textColor="@color/verdeCasTraining"
+        android:visibility="invisible"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

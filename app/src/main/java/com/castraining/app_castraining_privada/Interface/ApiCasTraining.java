@@ -19,11 +19,11 @@ public interface ApiCasTraining {
     Call<JsonArray> getConvocatoria ();
 
     @GET(URL_CURSOS) //Listado de los cursos
-    Call<JSONArray> getCursos();
+    Call<JsonArray> getCursos();
 
     @GET(URL_CONVOCTATORIA)
-    Call<JSONArray> getConvocatoriaid (@Query("id") int id);
+    Call<JsonArray> getConvocatoriaid (@Query("id") int id);
 
     @GET(URL_CURSOS)
-    Call<JSONArray> getCursosid (@Query("id") int id);
+    Call<JsonArray> getCursosid (@Query("id") int id);
 }

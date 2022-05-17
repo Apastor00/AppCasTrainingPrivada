@@ -33,7 +33,7 @@ public class PrivApi extends AppCompatActivity {
     public static final String URL_BASE = "https://cas-training.com/wp-json/wp/v2/";
 
     ActivityPrivApiBinding privApiBinding;
-    private ArrayList<String> listadoConvocatorias = new ArrayList<String>();
+
     ArrayAdapter<String> adapter = null;
 
     @Override
@@ -42,10 +42,24 @@ public class PrivApi extends AppCompatActivity {
         privApiBinding = ActivityPrivApiBinding.inflate(getLayoutInflater());
         setContentView(privApiBinding.getRoot());
 
-        getConvocatoria();
+        privApiBinding.btnConvocatorias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getConvocatoria();
+            }
+        });
+        privApiBinding.btnCursos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getCursos();
+            }
+        });
     }
-
     private void getConvocatoria() {
+        privApiBinding.progressBar.setVisibility(View.VISIBLE);
+        privApiBinding.txtProgressBar.setVisibility(View.VISIBLE);
+        privApiBinding.lstView.setVisibility(View.INVISIBLE);
+        ArrayList<String> listadoConvocatorias = new ArrayList<String>();
         Retrofit retrofit = new Retrofit.Builder() //Creamos la instancia retrofit
                 .baseUrl(URL_BASE) //Le indicamos la url base
                 .addConverterFactory(GsonConverterFactory.create()) //Usamos la librería Gson para convertir la respuesta a un objeto JSON
@@ -60,10 +74,9 @@ public class PrivApi extends AppCompatActivity {
             public void onResponse(Call<JsonArray> call, Response<JsonArray> response) {
                 int numeroConvocatorias = response.body().size();
                 for (int i= 0; i<numeroConvocatorias;i++){
-                    privApiBinding.progressBar.setVisibility(View.VISIBLE);
                     JsonObject jsonObject = response.body().get(i).getAsJsonObject();
-                    JsonObject acf = jsonObject.get("acf").getAsJsonObject();
-                    String bootcamp = acf.get("curso_convocatoria").getAsJsonObject().get("post_title").toString();
+                    JsonObject title = jsonObject.get("title").getAsJsonObject();
+                    String bootcamp = title.get("rendered").toString();
                     listadoConvocatorias.add(bootcamp);
                     //listadoConvocatorias.add(jsonObject.get("title").getAsJsonObject().get("rendered").toString());
                     if (numeroConvocatorias == listadoConvocatorias.size()){
@@ -73,14 +86,45 @@ public class PrivApi extends AppCompatActivity {
                 }
                 adapter = new ArrayAdapter<String>(PrivApi.this, android.R.layout.simple_list_item_1,listadoConvocatorias);
                 privApiBinding.lstView.setAdapter(adapter);
+            }
 
-                    /*JsonObject jsonObject= response.body().get(0).getAsJsonObject();
-                    String id = jsonObject.get("id").toString();
-                    while (id.isEmpty()){
-                        privApiBinding.progressBar.setVisibility(View.VISIBLE);
-                    }
-                    privApiBinding.progressBar.setVisibility(View.INVISIBLE);
-                    privApiBinding.txtApi.setText(id);*/
+            @Override
+            public void onFailure(Call<JsonArray> call, Throwable t) {
+                //privApiBinding.txtApi.setText(t.getMessage());
+            }
+        });
+    }
+    private void getCursos() {
+        privApiBinding.progressBar.setVisibility(View.VISIBLE);
+        privApiBinding.txtProgressBar.setVisibility(View.VISIBLE);
+        privApiBinding.lstView.setVisibility(View.INVISIBLE);
+        ArrayList<String> listadoCursos = new ArrayList<String>();
+        Retrofit retrofit = new Retrofit.Builder() //Creamos la instancia retrofit
+                .baseUrl(URL_BASE) //Le indicamos la url base
+                .addConverterFactory(GsonConverterFactory.create()) //Usamos la librería Gson para convertir la respuesta a un objeto JSON
+                .build(); //Construimos el objeto retrofit
+
+        ApiCasTraining apiCasTraining = retrofit.create(ApiCasTraining.class);
+
+        Call<JsonArray> call = apiCasTraining.getCursos();
+
+        call.enqueue(new Callback<JsonArray>() {
+            @Override
+            public void onResponse(Call<JsonArray> call, Response<JsonArray> response) {
+                int numeroCursos = response.body().size();
+                for (int i= 0; i<numeroCursos;i++){
+                    JsonObject jsonObject = response.body().get(i).getAsJsonObject();
+                    JsonObject title = jsonObject.get("title").getAsJsonObject();
+                    String nombreCurso = title.get("rendered").toString();
+                    listadoCursos.add(nombreCurso);
+                    //listadoConvocatorias.add(jsonObject.get("title").getAsJsonObject().get("rendered").toString());
+                    if (numeroCursos == listadoCursos.size()){
+                        privApiBinding.progressBar.setVisibility(View.INVISIBLE);
+                        privApiBinding.txtProgressBar.setVisibility(View.INVISIBLE);
+                        privApiBinding.lstView.setVisibility(View.VISIBLE);}
+                }
+                adapter = new ArrayAdapter<String>(PrivApi.this, android.R.layout.simple_list_item_1,listadoCursos);
+                privApiBinding.lstView.setAdapter(adapter);
             }
 
             @Override
@@ -90,4 +134,5 @@ public class PrivApi extends AppCompatActivity {
             }
         });
     }
+
 }
