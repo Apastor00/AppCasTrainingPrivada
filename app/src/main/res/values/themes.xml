@@ -14,7 +14,7 @@
         <!-- Customize your theme here. -->
     </style>
     <!--SplashScreen -->
-    <style name="SplashScreen" parent="android:TextAppearance.Theme">
+    <style name="SplashScreen" parent="Theme.Design.NoActionBar">
         <item name="android:windowBackground">@drawable/splash</item>
     </style>
     <!-- Diseño botón inicio sesión con usuario/constraseña-->
@@ -22,6 +22,8 @@
         <item name="android:background">@drawable/background_btn</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
     </style>
     <!-- Diseño botón inicio sesión con Apple-->
     <style name="btnAppleInicio">

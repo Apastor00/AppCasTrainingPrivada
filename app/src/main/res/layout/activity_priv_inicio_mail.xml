@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideHorizontal20"
+        app:layout_constraintTop_toTopOf="@+id/guideHorizontal15"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textAlignment="center"
@@ -32,9 +32,19 @@
         android:layout_marginEnd="50dp">
 
     </Button>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Acceso Api"
+        android:id="@+id/btnAccesoApi"
+        app:layout_constraintTop_toBottomOf="@+id/btnCerrarSesion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideHorizontal20"
+        android:id="@+id/guideHorizontal15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"

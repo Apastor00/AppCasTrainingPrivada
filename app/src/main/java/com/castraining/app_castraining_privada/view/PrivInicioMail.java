@@ -45,6 +45,13 @@ public class PrivInicioMail extends AppCompatActivity {
                 cerrarSesion();
             }
         });
+        privIniMaiBinding.btnAccesoApi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(PrivInicioMail.this, PrivApi.class);
+                startActivity(i);
+            }
+        });
     }
     private void cerrarSesion() {
         mGoogleSignInClient.signOut().addOnCompleteListener(this, new OnCompleteListener<Void>() {

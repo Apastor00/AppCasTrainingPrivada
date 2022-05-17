@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/guideHorizontal20"
+        app:layout_constraintBottom_toTopOf="@+id/guideHorizontal15"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp">
 
@@ -26,13 +26,13 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtInpPass1"
+        android:id="@+id/txtInpPass"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guideHorizontal20"
+        app:layout_constraintTop_toBottomOf="@id/guideHorizontal15"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         app:endIconMode="password_toggle">
@@ -51,7 +51,7 @@
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtInpPass1"
+        app:layout_constraintTop_toBottomOf="@id/txtInpPass"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         app:endIconMode="password_toggle">
@@ -77,7 +77,7 @@
     </Button>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideHorizontal20"
+        android:id="@+id/guideHorizontal15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"

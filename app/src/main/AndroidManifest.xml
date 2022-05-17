@@ -16,6 +16,9 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".view.PrivApi"
+            android:exported="false" />
+        <activity
             android:name=".view.PrivNuevoUsuario"
             android:exported="false" />
         <activity
@@ -32,7 +35,8 @@
             android:exported="false" />
         <activity
             android:name=".PrivMainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
