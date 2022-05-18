@@ -37,14 +37,34 @@
         app:layout_constraintTop_toBottomOf="@id/edtxtBusqueda"
         android:layout_marginTop="10dp"
         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnBusquedaApi"
+        style="@style/btnApp"
+        android:text="Búsqueda parámetro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnConvocatorias"
+        android:layout_marginTop="10dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtResultadoBusqueda"
+        app:layout_constraintTop_toBottomOf="@id/btnBusquedaApi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible"/>
+
     <ListView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:id="@+id/lstView"
-        app:layout_constraintTop_toBottomOf="@id/btnCursos"
-        app:layout_constraintEnd_toEndOf="@id/btnCursos"
-        app:layout_constraintStart_toStartOf="@id/btnConvocatorias"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtResultadoBusqueda"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         android:visibility="invisible">
     </ListView>
     <ProgressBar

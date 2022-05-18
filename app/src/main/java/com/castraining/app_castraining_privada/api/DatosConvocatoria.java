@@ -1,17 +1,17 @@
-package com.castraining.app_castraining_privada.model;
+package com.castraining.app_castraining_privada.api;
 
 import com.google.gson.annotations.SerializedName;
 
-public class CursoConvocatoria {
+public class DatosConvocatoria {
 
     @SerializedName("ID")
     int id;
     @SerializedName("post_content")
     String descripcion;
     @SerializedName("post_title")
-    String titleCurso;
-    @SerializedName("post_status")
-    String estado;
+    String title;
+    @SerializedName("post_type")
+    String tipo;
 
     public int getId() {
         return id;
@@ -29,19 +29,19 @@ public class CursoConvocatoria {
         this.descripcion = descripcion;
     }
 
-    public String getTitleCurso() {
-        return titleCurso;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTitleCurso(String titleCurso) {
-        this.titleCurso = titleCurso;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getEstado() {
-        return estado;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 }
