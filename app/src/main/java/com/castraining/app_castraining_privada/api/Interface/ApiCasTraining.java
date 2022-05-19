@@ -1,10 +1,15 @@
 package com.castraining.app_castraining_privada.api.Interface;
 
+import com.castraining.app_castraining_privada.api.raizConvocatoria;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -19,7 +24,7 @@ public interface ApiCasTraining {
     String URL_CONVOCATORIA_ID = "convocatoria/{id}";
 
     @GET(URL_CONVOCTATORIA) //Listado de las comvocatorias
-    Call<JsonArray> getConvocatoria ();
+    Call<raizConvocatoria> getConvocatoria ();
 
     @GET(URL_CURSOS) //Listado de los cursos
     Call<JsonArray> getCursos();

@@ -1,6 +1,9 @@
 package com.castraining.app_castraining_privada.model;
 
+import com.castraining.app_castraining_privada.api.AcfConvocatoria;
 import com.google.gson.JsonObject;
+
+import java.util.List;
 
 public class CursoItineBootcamp {
 

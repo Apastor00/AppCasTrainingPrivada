@@ -6,13 +6,12 @@ import java.util.List;
 
 public class AcfConvocatoria {
 
-
     @SerializedName("curso_convocatoria")
-    List<DatosConvocatoria> datosConvocatoria;
+    DatosConvocatoria datosConvocatoria;
     @SerializedName("itinerario_convocatoria")
-    List<DatosConvocatoria> itinerarioConvocatoria;
+    DatosConvocatoria itinerarioConvocatoria;
     @SerializedName("bootcamp")
-    List<DatosConvocatoria> bootcamp;
+    DatosConvocatoria bootcamp;
     @SerializedName("inicio_convocatoria")
     String fechaInicio ;
     @SerializedName("fin_convocatoria")
@@ -24,29 +23,35 @@ public class AcfConvocatoria {
     @SerializedName("modalidad_convocatoria")
     String modalidad;
     String duracion;
-    List<TurnoConvocatoria> turno;
+    TurnoConvocatoria turno;
+    /**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+     + Aquí añadimos los precios y los descuentos cuando se quiera implementar +
+     ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++**/
 
-    public List<DatosConvocatoria> getDatosConvocatoria() {
+    //Getter and Setter
+
+
+    public DatosConvocatoria getDatosConvocatoria() {
         return datosConvocatoria;
     }
 
-    public void setDatosConvocatoria(List<DatosConvocatoria> datosConvocatoria) {
+    public void setDatosConvocatoria(DatosConvocatoria datosConvocatoria) {
         this.datosConvocatoria = datosConvocatoria;
     }
 
-    public List<DatosConvocatoria> getItinerarioConvocatoria() {
+    public DatosConvocatoria getItinerarioConvocatoria() {
         return itinerarioConvocatoria;
     }
 
-    public void setItinerarioConvocatoria(List<DatosConvocatoria> itinerarioConvocatoria) {
+    public void setItinerarioConvocatoria(DatosConvocatoria itinerarioConvocatoria) {
         this.itinerarioConvocatoria = itinerarioConvocatoria;
     }
 
-    public List<DatosConvocatoria> getBootcamp() {
+    public DatosConvocatoria getBootcamp() {
         return bootcamp;
     }
 
-    public void setBootcamp(List<DatosConvocatoria> bootcamp) {
+    public void setBootcamp(DatosConvocatoria bootcamp) {
         this.bootcamp = bootcamp;
     }
 
@@ -98,14 +103,12 @@ public class AcfConvocatoria {
         this.duracion = duracion;
     }
 
-    public List<TurnoConvocatoria> getTurno() {
+    public TurnoConvocatoria getTurno() {
         return turno;
     }
 
-    public void setTurno(List<TurnoConvocatoria> turnoConvocatoria) {
-        this.turno = turnoConvocatoria;
+    public void setTurno(TurnoConvocatoria turno) {
+        this.turno = turno;
     }
-    /**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-     + Aquí añadimos los precios y los descuentos cuando se quiera implementar +
-     ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++**/
 }
+
