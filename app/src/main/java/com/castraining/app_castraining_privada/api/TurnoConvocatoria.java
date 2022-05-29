@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 public class TurnoConvocatoria {
 
     @SerializedName("name")
-    String turno;
+    private String turno;
 
     public String getTurno() {
         return turno;

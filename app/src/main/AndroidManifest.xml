@@ -16,6 +16,9 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".view.PrivDetallesCurso"
+            android:exported="false" />
+        <activity
             android:name=".view.PrivApi"
             android:exported="false" />
         <activity
@@ -26,9 +29,6 @@
             android:exported="false" />
         <activity
             android:name=".view.PrivInicioApple"
-            android:exported="false" />
-        <activity
-            android:name=".view.PrivInicioGoogle"
             android:exported="false" />
         <activity
             android:name=".view.PrivInicioMail"

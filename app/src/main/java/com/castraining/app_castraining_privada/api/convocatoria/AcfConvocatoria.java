@@ -1,29 +1,33 @@
-package com.castraining.app_castraining_privada.api;
+package com.castraining.app_castraining_privada.api.convocatoria;
 
+import com.castraining.app_castraining_privada.api.TurnoConvocatoria;
 import com.google.gson.annotations.SerializedName;
+
+import org.json.JSONObject;
 
 import java.util.List;
 
-public class AcfConvocatoria {
+public class AcfConvocatoria<Datos> {
 
     @SerializedName("curso_convocatoria")
-    DatosConvocatoria datosConvocatoria;
+    private Datos datosConvocatoria;
     @SerializedName("itinerario_convocatoria")
-    DatosConvocatoria itinerarioConvocatoria;
-    @SerializedName("bootcamp")
-    DatosConvocatoria bootcamp;
+    private Datos itinerarioConvocatoria;
+    private Datos bootcamp;
+
     @SerializedName("inicio_convocatoria")
-    String fechaInicio ;
+    private String fechaInicio ;
     @SerializedName("fin_convocatoria")
-    String fechaFin;
+    private String fechaFin;
     @SerializedName("horario_convocatoria")
-    String horario;
+    private String horario;
     @SerializedName("lugar_convocatoria")
-    String lugarConvocatoria;
+    private String lugarConvocatoria;
     @SerializedName("modalidad_convocatoria")
-    String modalidad;
-    String duracion;
-    TurnoConvocatoria turno;
+    private String modalidad;
+    private String duracion;
+    private List<TurnoConvocatoria> turno;
+
     /**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
      + Aquí añadimos los precios y los descuentos cuando se quiera implementar +
      ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++**/
@@ -31,27 +35,34 @@ public class AcfConvocatoria {
     //Getter and Setter
 
 
-    public DatosConvocatoria getDatosConvocatoria() {
-        return datosConvocatoria;
+
+    public List<TurnoConvocatoria> getTurno() {
+        return turno;
+    }
+    public void setTurno(List<TurnoConvocatoria> turno) {
+        this.turno = turno;
     }
 
-    public void setDatosConvocatoria(DatosConvocatoria datosConvocatoria) {
+    public Datos getDatosConvocatoria() {
+        return datosConvocatoria;
+    }
+    public void setDatosConvocatoria(Datos datosConvocatoria) {
         this.datosConvocatoria = datosConvocatoria;
     }
 
-    public DatosConvocatoria getItinerarioConvocatoria() {
+    public Datos getItinerarioConvocatoria() {
         return itinerarioConvocatoria;
     }
 
-    public void setItinerarioConvocatoria(DatosConvocatoria itinerarioConvocatoria) {
+    public void setItinerarioConvocatoria(Datos itinerarioConvocatoria) {
         this.itinerarioConvocatoria = itinerarioConvocatoria;
     }
 
-    public DatosConvocatoria getBootcamp() {
+    public Datos getBootcamp() {
         return bootcamp;
     }
 
-    public void setBootcamp(DatosConvocatoria bootcamp) {
+    public void setBootcamp(Datos bootcamp) {
         this.bootcamp = bootcamp;
     }
 
@@ -101,14 +112,6 @@ public class AcfConvocatoria {
 
     public void setDuracion(String duracion) {
         this.duracion = duracion;
-    }
-
-    public TurnoConvocatoria getTurno() {
-        return turno;
-    }
-
-    public void setTurno(TurnoConvocatoria turno) {
-        this.turno = turno;
     }
 }
 

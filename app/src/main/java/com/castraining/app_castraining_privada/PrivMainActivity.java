@@ -26,7 +26,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class PrivMainActivity extends AppCompatActivity {
+public class PrivMainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private ActivityPrivMainBinding privMainBinding;
 
@@ -44,6 +44,14 @@ public class PrivMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         privMainBinding = ActivityPrivMainBinding.inflate(getLayoutInflater());
         setContentView(privMainBinding.getRoot());
+
+        //Listener de los botones
+        privMainBinding.btnInicioCorreo.setOnClickListener(this);
+        privMainBinding.btnNuevoUsuario.setOnClickListener(this);
+        privMainBinding.btnInicioGoogle.setOnClickListener(this);
+        privMainBinding.btnInicioApple.setOnClickListener(this);
+        privMainBinding.btnInicioFacebook.setOnClickListener(this);
+
         //Inicializamos la instancia de Firebase
         mAuth = FirebaseAuth.getInstance();
         //Inicializamos las credenciales de google
@@ -51,49 +59,6 @@ public class PrivMainActivity extends AppCompatActivity {
                 .requestEmail()
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
-
-        //Listener de los botones
-        privMainBinding.btnInicioCorreo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String mail = privMainBinding.edtxtLoginMail.getText().toString();
-                String password = privMainBinding.edtxtLoginPassword.getText().toString();
-                InicioSesionCorreo(mail, password);
-            }
-        });
-        privMainBinding.btnNuevoUsuario.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(PrivMainActivity.this, PrivNuevoUsuario.class);
-                if (privMainBinding.edtxtLoginMail.getText().toString().isEmpty()){
-                    startActivity(i);
-                } else {
-                    String usuario = privMainBinding.edtxtLoginMail.getText().toString();
-                    i.putExtra("usuario", usuario);
-                    startActivity(i);
-                }
-            }
-        });
-        privMainBinding.btnInicioGoogle.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                inicioSesionGoogle();
-            }
-        });
-        privMainBinding.btnInicioApple.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String inicioSesion = "Iniciada sesión con Cuenta Apple";
-                InicioSesionApple(inicioSesion);
-            }
-        });
-        privMainBinding.btnInicioFacebook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String inicioSesion = "Iniciada sesión con Cuenta Facebook";
-                InicioSesionFacebook(inicioSesion);
-            }
-        });
     }
     /************************** Autentificación con Google ********************/
     //Método que iniciamos al pulsar el botón de inicio sesión en google.
@@ -121,6 +86,8 @@ public class PrivMainActivity extends AppCompatActivity {
             i.putExtra("loginOk", "Login de Google ya autenticado");
             startActivity(i);
         } else {
+            Intent i = new Intent(PrivMainActivity.this, PrivMainActivity.class);
+            startActivity(i);
             Log.w(TAG, "Fallo requestCode");
         }
     }
@@ -146,12 +113,12 @@ public class PrivMainActivity extends AppCompatActivity {
         }
     }
     private void updateUI(GoogleSignInAccount account) {}
+    private void updateUIFirebase(FirebaseUser currentUser) { }
 
 
     //Métodos que llaman a cada Intent según el botón pulsado
-    private void InicioSesionApple(String inicioSesion) {
+    private void InicioSesionApple() {
         Intent i = new Intent(this, PrivInicioApple.class );
-        i.putExtra("incioSesion", inicioSesion);
         startActivity(i);
     }
     private void InicioSesionCorreo(String mail, String password) {
@@ -175,13 +142,45 @@ public class PrivMainActivity extends AppCompatActivity {
                     }
                 });
     }
-    private void updateUIFirebase(FirebaseUser currentUser) { }
-
-    private void InicioSesionFacebook(String inicioSesion) {
+    private void InicioSesionFacebook() {
         Intent i = new Intent(this, PrivInicioFacebook.class );
-        i.putExtra("incioSesion", inicioSesion);
         startActivity(i);
     }
 
-
+//OnClick de los botones
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.btnInicioCorreo:
+                String mail = privMainBinding.edtxtLoginMail.getText().toString();
+                String password = privMainBinding.edtxtLoginPassword.getText().toString();
+                if (mail.equals("") || password.equals("")){
+                    Toast.makeText(PrivMainActivity.this, "Debe rellenar un usuario y contraseña", Toast.LENGTH_LONG).show();
+                } else if (password.length()<6){
+                    Toast.makeText(PrivMainActivity.this, "La contraseña debe contener al menos 6 caracteres", Toast.LENGTH_LONG).show();
+                } else InicioSesionCorreo(mail, password);
+                break;
+            case R.id.btnNuevoUsuario:
+                Intent i = new Intent(PrivMainActivity.this, PrivNuevoUsuario.class);
+                if (privMainBinding.edtxtLoginMail.getText().toString().isEmpty()){
+                    startActivity(i);
+                } else {
+                    String usuario = privMainBinding.edtxtLoginMail.getText().toString();
+                    i.putExtra("usuario", usuario);
+                    startActivity(i);
+                }
+                break;
+            case R.id.btnInicioGoogle:
+                inicioSesionGoogle();
+                break;
+            case R.id.btnInicioFacebook:
+                InicioSesionFacebook();
+                break;
+            case R.id.btnInicioApple:
+                InicioSesionApple();
+                break;
+            default:
+                break;
+        }
+    }
 }

@@ -1,8 +1,18 @@
 package com.castraining.app_castraining_privada.api;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class DatosConvocatoria {
+import org.json.JSONArray;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.net.ssl.CertPathTrustManagerParameters;
+
+public class Datos {
 
     @SerializedName("post_content")
     private String descripcion;
@@ -34,4 +44,15 @@ public class DatosConvocatoria {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+
+    /*
+    private List<ConvocatoriaResponse> Datos;
+
+    public List<ConvocatoriaResponse> getRaizConvocatoria() {
+        return Datos;
+    }
+
+    public void setRaizConvocatoria(List<ConvocatoriaResponse> Datos) {
+        this.Datos = Datos;
+    }*/
 }
